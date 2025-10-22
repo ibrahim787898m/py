@@ -1,13 +1,5 @@
 """
 class Solution(object):
-    def twoSum(self, nums, target):
-        for i in range(len(nums)):
-            for j in range(i + 1, len(nums)):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
-"""
-"""
-class Solution(object):
     def fizzBuzz(self, n):
         res = []
         for i in range(1, n + 1):
@@ -50,7 +42,22 @@ class Solution(object):
 """
 """
 class Solution(object):
+    def vowelStrings(self, words, left, right):
+        vowels = ["a", "e", "i", "o", "u"]
+        count = 0
+
+        for i in range(left, right + 1):
+            if words[i][0] in vowels and words[i][-1] in vowels:
+                count += 1
+
+        return count
+"""
+"""
+class Solution(object):
     def isAnagram(self, s, t):
+        if len(s) != len(t):
+            return False
+
         return sorted(s) == sorted(t)
 """
 """
@@ -71,6 +78,38 @@ class Solution(object):
 
         return min(front, back, mix1, mix2)
 """
+"""
+class Solution(object):
+    def deleteDuplicates(self, head):
+        current == head
+        while current and current.next:
+            if current.val == current.next.val:
+                current.next == current.next.next
+            else:
+                current == current.next
+
+        return head
+"""
+"""
+class Solution(object):
+    def isPalindrome(self, s):
+        s = ''.join(ch for ch in s if ch.isalnum())
+        s = s.lower()
+
+        left = 0
+        right = len(s) - 1
+
+        while left < right:
+            if s[left] != s[right]:
+                return False
+
+            left += 1
+            right -= 1
+
+
+
+        return True
+"""
 class Solution(object):
     def addDigits(self, num):
         while True:
@@ -90,3 +129,4 @@ if __name__ == "__main__":
     sol = Solution()
     res = sol.addDigits(38)
     print(res)
+
